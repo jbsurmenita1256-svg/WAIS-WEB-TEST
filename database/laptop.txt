@@ -1,0 +1,29 @@
+categories: Laptop
+
+Pink Slim 14 | 32990
+Image: 
+Alt: Pink Slim 14 laptop photo
+Description: 14-inch display, 8 GB RAM, 512 GB SSD.
+Pros:
+- Light and easy to carry
+- Good for school and office work
+- SSD makes it start quickly
+Cons:
+- 8 GB RAM limits heavy multitasking
+- No dedicated graphics card
+
+Studio Pro 16 | 64500
+Image: 
+Alt: Studio Pro 16 laptop photo
+Description: 16-inch display, 16 GB RAM, 1 TB SSD.
+Pros:
+- Large 16-inch display
+- 16 GB RAM handles editing and coding
+- 1 TB of storage
+Cons:
+- Heavier to carry around
+- The most expensive item in the store
+
+ACER Aspire Lite 15 AL15-72P-59YM Intel® Core™ i5 Laptop (Light Silver) | 70000
+Image: 
+Alt: ACER Aspire Lite 15 Intel Core i5 Light Silver laptop

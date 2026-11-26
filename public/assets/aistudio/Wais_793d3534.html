@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WAIS - Product Inventory</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input type="checkbox" class="pick" id="pk1" form="pickform" aria-label="Pick Pink Slim 14 to compare">
+<input type="checkbox" class="pick" id="pk2" form="pickform" aria-label="Pick Studio Pro 16 to compare">
+<input type="checkbox" class="pick" id="pk3" form="pickform" aria-label="Pick Wireless Earbuds to compare">
+<input type="checkbox" class="pick" id="pk4" form="pickform" aria-label="Pick Smart Watch S2 to compare">
+<input type="checkbox" class="pick" id="pk5" form="pickform" aria-label="Pick 16 GB DDR4 RAM to compare">
+<input type="checkbox" class="pick" id="pk6" form="pickform" aria-label="Pick 1 TB NVMe SSD to compare">
+<input type="checkbox" class="pick" id="pk7" form="pickform" aria-label="Pick Wireless Mouse to compare">
+<input type="checkbox" class="pick" id="pk8" form="pickform" aria-label="Pick Laptop Sleeve 14&quot; to compare">
+<input type="checkbox" class="pick" id="pk9" form="pickform" aria-label="Pick USB Flash Drive 64 GB to compare">
+<input type="checkbox" class="pick" id="pk10" form="pickform" aria-label="Pick Jumper Wire Kit to compare">
+<input type="checkbox" class="pick" id="pk11" form="pickform" aria-label="Pick HDMI Cable 2 m to compare">
+<input type="checkbox" class="pick" id="pk12" form="pickform" aria-label="Pick 65W USB-C Charger to compare">
+<input type="checkbox" class="pick" id="pk13" form="pickform" aria-label="Pick Over-ear Headphones to compare">
+<input type="checkbox" class="pick" id="pk14" form="pickform" aria-label="Pick Bluetooth Speaker to compare">
+<input type="checkbox" class="pick" id="pk15" form="pickform" aria-label="Pick PlayStation 5 Slim to compare">
+<input type="checkbox" class="pick" id="pk16" form="pickform" aria-label="Pick PlayStation 5 Digital to compare">
+<input type="checkbox" class="pick" id="pk17" form="pickform" aria-label="Pick Xbox Series X to compare">
+<input type="checkbox" class="pick" id="pk18" form="pickform" aria-label="Pick Xbox Series S to compare">
+<input type="checkbox" class="pick" id="pk19" form="pickform" aria-label="Pick Nintendo Switch OLED to compare">
+<input type="checkbox" class="pick" id="pk20" form="pickform" aria-label="Pick Nintendo Switch Lite to compare">
+<input type="checkbox" class="pick" id="pk21" form="pickform" aria-label="Pick Steam Deck OLED to compare">
+<input type="checkbox" class="pick" id="pk22" form="pickform" aria-label="Pick Retro Handheld Console to compare">
+<div class="app">
+
+  <nav class="sidebar" aria-label="Main">
+    <a class="home" href="#inventory">HOME</a>
+    <ul>
+      <li><a href="#about">About Us</a>
+        <ul class="sub"><li><a href="#overview">Overview</a></li></ul>
+      </li>
+      <li class="group"><a href="#inventory">Product Inventory</a>
+        <ul class="sub">
+          <li><a href="#laptop">Laptop</a></li>
+          <li><a href="#gadget">Gadget</a></li>
+          <li><a href="#components">Components</a>
+            <ul class="sub2">
+              <li><a href="#usbs">USBs</a></li>
+              <li><a href="#wires">Wires</a></li>
+              <li><a href="#cables">Cables</a></li>
+              <li><a href="#chargers">Chargers</a></li>
+              <li><a href="#harddrives">Hard Drives</a></li>
+              <li><a href="#rams">RAMs</a></li>
+            </ul>
+          </li>
+          <li><a href="#accessories">Accessories</a>
+            <ul class="sub2">
+              <li><a href="#smartwatch">Smart Watch</a></li>
+              <li><a href="#headphones">Headphones</a></li>
+              <li><a href="#earphones">Earphones</a></li>
+              <li><a href="#speakers">Speakers</a></li>
+            </ul>
+          </li>
+          <li><a href="#consoles">Gaming Consoles</a>
+            <ul class="sub2">
+              <li><a href="#playstation">PlayStation</a></li>
+              <li><a href="#xbox">Xbox</a></li>
+              <li><a href="#nintendo">Nintendo</a></li>
+              <li><a href="#handheld">Handheld</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#help">Help &amp; Settings</a></li>
+      <li><a href="#language">Language</a></li>
+      <li><a href="#orders">Customer Order</a></li>
+      <li><a href="#signin">Sign in</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="topbar">
+      <div class="logo"><i></i><span>Wais<br>Philippines</span></div>
+      <input class="search" type="search" placeholder="Search Species" aria-label="Search">
+      <a class="btn" href="#favorites">&#9733; Favorites</a>
+      <a class="btn" href="#subscription">Subscription</a>
+      <a class="btn" href="#cart">&#128722; Cart</a>
+    </header>
+
+    <section class="deals" aria-label="Discounted products">
+      <div class="track">
+      <a class="deal" href="#laptop"><span class="dthumb">&#128187;</span><span class="dtext"><b>Pink Slim 14</b><span><s>&#8369;32,990</s> <strong>&#8369;28,042</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#earphones"><span class="dthumb">&#127925;</span><span class="dtext"><b>Wireless Earbuds</b><span><s>&#8369;2,490</s> <strong>&#8369;1,992</strong></span></span><span class="badge">-20%</span></a>
+      <a class="deal" href="#smartwatch"><span class="dthumb">&#8986;</span><span class="dtext"><b>Smart Watch S2</b><span><s>&#8369;3,990</s> <strong>&#8369;3,591</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#harddrives"><span class="dthumb">&#128190;</span><span class="dtext"><b>1 TB NVMe SSD</b><span><s>&#8369;3,780</s> <strong>&#8369;2,835</strong></span></span><span class="badge">-25%</span></a>
+      <a class="deal" href="#chargers"><span class="dthumb">&#128268;</span><span class="dtext"><b>65W USB-C Charger</b><span><s>&#8369;1,290</s> <strong>&#8369;903</strong></span></span><span class="badge">-30%</span></a>
+      <a class="deal" href="#headphones"><span class="dthumb">&#127911;</span><span class="dtext"><b>Over-ear Headphones</b><span><s>&#8369;2,890</s> <strong>&#8369;2,456</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#speakers"><span class="dthumb">&#128266;</span><span class="dtext"><b>Bluetooth Speaker</b><span><s>&#8369;1,890</s> <strong>&#8369;1,512</strong></span></span><span class="badge">-20%</span></a>
+      <a class="deal" href="#gadget"><span class="dthumb">&#128433;</span><span class="dtext"><b>Wireless Mouse</b><span><s>&#8369;590</s> <strong>&#8369;531</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#playstation"><span class="dthumb">&#127918;</span><span class="dtext"><b>PlayStation 5 Digital</b><span><s>&#8369;30,990</s> <strong>&#8369;27,891</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#xbox"><span class="dthumb">&#128250;</span><span class="dtext"><b>Xbox Series S</b><span><s>&#8369;19,990</s> <strong>&#8369;16,992</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#nintendo"><span class="dthumb">&#127918;</span><span class="dtext"><b>Nintendo Switch OLED</b><span><s>&#8369;18,990</s> <strong>&#8369;16,711</strong></span></span><span class="badge">-12%</span></a>
+      <a class="deal" href="#handheld"><span class="dthumb">&#128377;</span><span class="dtext"><b>Steam Deck OLED</b><span><s>&#8369;32,990</s> <strong>&#8369;30,351</strong></span></span><span class="badge">-8%</span></a>
+      <span class="dup" aria-hidden="true">
+      <a class="deal" href="#laptop" tabindex="-1"><span class="dthumb">&#128187;</span><span class="dtext"><b>Pink Slim 14</b><span><s>&#8369;32,990</s> <strong>&#8369;28,042</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#earphones" tabindex="-1"><span class="dthumb">&#127925;</span><span class="dtext"><b>Wireless Earbuds</b><span><s>&#8369;2,490</s> <strong>&#8369;1,992</strong></span></span><span class="badge">-20%</span></a>
+      <a class="deal" href="#smartwatch" tabindex="-1"><span class="dthumb">&#8986;</span><span class="dtext"><b>Smart Watch S2</b><span><s>&#8369;3,990</s> <strong>&#8369;3,591</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#harddrives" tabindex="-1"><span class="dthumb">&#128190;</span><span class="dtext"><b>1 TB NVMe SSD</b><span><s>&#8369;3,780</s> <strong>&#8369;2,835</strong></span></span><span class="badge">-25%</span></a>
+      <a class="deal" href="#chargers" tabindex="-1"><span class="dthumb">&#128268;</span><span class="dtext"><b>65W USB-C Charger</b><span><s>&#8369;1,290</s> <strong>&#8369;903</strong></span></span><span class="badge">-30%</span></a>
+      <a class="deal" href="#headphones" tabindex="-1"><span class="dthumb">&#127911;</span><span class="dtext"><b>Over-ear Headphones</b><span><s>&#8369;2,890</s> <strong>&#8369;2,456</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#speakers" tabindex="-1"><span class="dthumb">&#128266;</span><span class="dtext"><b>Bluetooth Speaker</b><span><s>&#8369;1,890</s> <strong>&#8369;1,512</strong></span></span><span class="badge">-20%</span></a>
+      <a class="deal" href="#gadget" tabindex="-1"><span class="dthumb">&#128433;</span><span class="dtext"><b>Wireless Mouse</b><span><s>&#8369;590</s> <strong>&#8369;531</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#playstation" tabindex="-1"><span class="dthumb">&#127918;</span><span class="dtext"><b>PlayStation 5 Digital</b><span><s>&#8369;30,990</s> <strong>&#8369;27,891</strong></span></span><span class="badge">-10%</span></a>
+      <a class="deal" href="#xbox" tabindex="-1"><span class="dthumb">&#128250;</span><span class="dtext"><b>Xbox Series S</b><span><s>&#8369;19,990</s> <strong>&#8369;16,992</strong></span></span><span class="badge">-15%</span></a>
+      <a class="deal" href="#nintendo" tabindex="-1"><span class="dthumb">&#127918;</span><span class="dtext"><b>Nintendo Switch OLED</b><span><s>&#8369;18,990</s> <strong>&#8369;16,711</strong></span></span><span class="badge">-12%</span></a>
+      <a class="deal" href="#handheld" tabindex="-1"><span class="dthumb">&#128377;</span><span class="dtext"><b>Steam Deck OLED</b><span><s>&#8369;32,990</s> <strong>&#8369;30,351</strong></span></span><span class="badge">-8%</span></a>
+      </span>
+      </div>
+    </section>
+
+    <div class="content">
+
+      <!-- Product Inventory (also used for the four categories) -->
+      <section class="view" id="inventory">
+        <h2 class="all-title">Product Inventory</h2>
+        <h2 class="cat-title" id="laptop">Laptop</h2>
+        <h2 class="cat-title" id="gadget">Gadget</h2>
+        <h2 class="cat-title" id="components">Components</h2>
+        <h2 class="cat-title" id="accessories">Accessories</h2>
+        <h2 class="cat-title" id="usbs">USBs</h2>
+        <h2 class="cat-title" id="wires">Wires</h2>
+        <h2 class="cat-title" id="cables">Cables</h2>
+        <h2 class="cat-title" id="chargers">Chargers</h2>
+        <h2 class="cat-title" id="harddrives">Hard Drives</h2>
+        <h2 class="cat-title" id="rams">RAMs</h2>
+        <h2 class="cat-title" id="smartwatch">Smart Watch</h2>
+        <h2 class="cat-title" id="headphones">Headphones</h2>
+        <h2 class="cat-title" id="earphones">Earphones</h2>
+        <h2 class="cat-title" id="speakers">Speakers</h2>
+        <h2 class="cat-title" id="consoles">Gaming Consoles</h2>
+        <h2 class="cat-title" id="playstation">PlayStation</h2>
+        <h2 class="cat-title" id="xbox">Xbox</h2>
+        <h2 class="cat-title" id="nintendo">Nintendo</h2>
+        <h2 class="cat-title" id="handheld">Handheld</h2>
+
+        <p class="tip">Tap the &#9995; on any two products to compare their pros and cons.</p>
+
+        <div class="grid">
+          <article class="product" data-cat="laptop" data-sub="laptop">
+            <div class="thumb pink"><b>LAPTOP</b><span class="screen"></span><span class="base"></span><label class="hand" for="pk1" title="Pick to compare">&#9995;<span class="sr">Pick Pink Slim 14 to compare</span></label></div>
+            <div class="info"><h3>Pink Slim 14</h3><span class="price">&#8369;32,990</span>
+              <p>14-inch display, 8 GB RAM, 512 GB SSD.</p>
+              <div class="actions">
+                <input type="checkbox" id="f1" class="fav"><label for="f1">Favorite</label>
+                <input type="checkbox" id="c1" class="add"><label for="c1">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="laptop" data-sub="laptop">
+            <div class="thumb">&#128187;<label class="hand" for="pk2" title="Pick to compare">&#9995;<span class="sr">Pick Studio Pro 16 to compare</span></label></div>
+            <div class="info"><h3>Studio Pro 16</h3><span class="price">&#8369;64,500</span>
+              <p>16-inch display, 16 GB RAM, 1 TB SSD.</p>
+              <div class="actions">
+                <input type="checkbox" id="f2" class="fav"><label for="f2">Favorite</label>
+                <input type="checkbox" id="c2" class="add"><label for="c2">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="accessories" data-sub="earphones">
+            <div class="thumb">&#127925;<label class="hand" for="pk3" title="Pick to compare">&#9995;<span class="sr">Pick Wireless Earbuds to compare</span></label></div>
+            <div class="info"><h3>Wireless Earbuds</h3><span class="price">&#8369;2,490</span>
+              <p>24-hour battery with a charging case.</p>
+              <div class="actions">
+                <input type="checkbox" id="f3" class="fav"><label for="f3">Favorite</label>
+                <input type="checkbox" id="c3" class="add"><label for="c3">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="accessories" data-sub="smartwatch">
+            <div class="thumb">&#8986;<label class="hand" for="pk4" title="Pick to compare">&#9995;<span class="sr">Pick Smart Watch S2 to compare</span></label></div>
+            <div class="info"><h3>Smart Watch S2</h3><span class="price">&#8369;3,990</span>
+              <p>Heart-rate and sleep tracking.</p>
+              <div class="actions">
+                <input type="checkbox" id="f4" class="fav"><label for="f4">Favorite</label>
+                <input type="checkbox" id="c4" class="add"><label for="c4">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="rams">
+            <div class="thumb">&#129504;<label class="hand" for="pk5" title="Pick to compare">&#9995;<span class="sr">Pick 16 GB DDR4 RAM to compare</span></label></div>
+            <div class="info"><h3>16 GB DDR4 RAM</h3><span class="price">&#8369;2,150</span>
+              <p>3200 MHz memory module.</p>
+              <div class="actions">
+                <input type="checkbox" id="f5" class="fav"><label for="f5">Favorite</label>
+                <input type="checkbox" id="c5" class="add"><label for="c5">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="harddrives">
+            <div class="thumb">&#128190;<label class="hand" for="pk6" title="Pick to compare">&#9995;<span class="sr">Pick 1 TB NVMe SSD to compare</span></label></div>
+            <div class="info"><h3>1 TB NVMe SSD</h3><span class="price">&#8369;3,780</span>
+              <p>Fast storage for boot and games.</p>
+              <div class="actions">
+                <input type="checkbox" id="f6" class="fav"><label for="f6">Favorite</label>
+                <input type="checkbox" id="c6" class="add"><label for="c6">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="gadget" data-sub="gadget">
+            <div class="thumb">&#128433;<label class="hand" for="pk7" title="Pick to compare">&#9995;<span class="sr">Pick Wireless Mouse to compare</span></label></div>
+            <div class="info"><h3>Wireless Mouse</h3><span class="price">&#8369;590</span>
+              <p>Quiet clicks, 12-month battery.</p>
+              <div class="actions">
+                <input type="checkbox" id="f7" class="fav"><label for="f7">Favorite</label>
+                <input type="checkbox" id="c7" class="add"><label for="c7">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="gadget" data-sub="gadget">
+            <div class="thumb">&#128188;<label class="hand" for="pk8" title="Pick to compare">&#9995;<span class="sr">Pick Laptop Sleeve 14&quot; to compare</span></label></div>
+            <div class="info"><h3>Laptop Sleeve 14&quot;</h3><span class="price">&#8369;750</span>
+              <p>Padded, water-resistant sleeve.</p>
+              <div class="actions">
+                <input type="checkbox" id="f8" class="fav"><label for="f8">Favorite</label>
+                <input type="checkbox" id="c8" class="add"><label for="c8">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="usbs">
+            <div class="thumb">&#128189;<label class="hand" for="pk9" title="Pick to compare">&#9995;<span class="sr">Pick USB Flash Drive 64 GB to compare</span></label></div>
+            <div class="info"><h3>USB Flash Drive 64 GB</h3><span class="price">&#8369;350</span>
+              <p>Pocket storage for files and backups.</p>
+              <div class="actions">
+                <input type="checkbox" id="f9" class="fav"><label for="f9">Favorite</label>
+                <input type="checkbox" id="c9" class="add"><label for="c9">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="wires">
+            <div class="thumb">&#129525;<label class="hand" for="pk10" title="Pick to compare">&#9995;<span class="sr">Pick Jumper Wire Kit to compare</span></label></div>
+            <div class="info"><h3>Jumper Wire Kit</h3><span class="price">&#8369;180</span>
+              <p>40 pieces for breadboards and projects.</p>
+              <div class="actions">
+                <input type="checkbox" id="f10" class="fav"><label for="f10">Favorite</label>
+                <input type="checkbox" id="c10" class="add"><label for="c10">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="cables">
+            <div class="thumb">&#128279;<label class="hand" for="pk11" title="Pick to compare">&#9995;<span class="sr">Pick HDMI Cable 2 m to compare</span></label></div>
+            <div class="info"><h3>HDMI Cable 2 m</h3><span class="price">&#8369;320</span>
+              <p>Connects a laptop to a TV or monitor.</p>
+              <div class="actions">
+                <input type="checkbox" id="f11" class="fav"><label for="f11">Favorite</label>
+                <input type="checkbox" id="c11" class="add"><label for="c11">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="components" data-sub="chargers">
+            <div class="thumb">&#128268;<label class="hand" for="pk12" title="Pick to compare">&#9995;<span class="sr">Pick 65W USB-C Charger to compare</span></label></div>
+            <div class="info"><h3>65W USB-C Charger</h3><span class="price">&#8369;1,290</span>
+              <p>Charges laptops, phones and tablets.</p>
+              <div class="actions">
+                <input type="checkbox" id="f12" class="fav"><label for="f12">Favorite</label>
+                <input type="checkbox" id="c12" class="add"><label for="c12">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="accessories" data-sub="headphones">
+            <div class="thumb">&#127911;<label class="hand" for="pk13" title="Pick to compare">&#9995;<span class="sr">Pick Over-ear Headphones to compare</span></label></div>
+            <div class="info"><h3>Over-ear Headphones</h3><span class="price">&#8369;2,890</span>
+              <p>Cushioned ear cups for long listening.</p>
+              <div class="actions">
+                <input type="checkbox" id="f13" class="fav"><label for="f13">Favorite</label>
+                <input type="checkbox" id="c13" class="add"><label for="c13">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="accessories" data-sub="speakers">
+            <div class="thumb">&#128266;<label class="hand" for="pk14" title="Pick to compare">&#9995;<span class="sr">Pick Bluetooth Speaker to compare</span></label></div>
+            <div class="info"><h3>Bluetooth Speaker</h3><span class="price">&#8369;1,890</span>
+              <p>Portable sound for rooms and trips.</p>
+              <div class="actions">
+                <input type="checkbox" id="f14" class="fav"><label for="f14">Favorite</label>
+                <input type="checkbox" id="c14" class="add"><label for="c14">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="playstation">
+            <div class="thumb">&#127918;<label class="hand" for="pk15" title="Pick to compare">&#9995;<span class="sr">Pick PlayStation 5 Slim to compare</span></label></div>
+            <div class="info"><h3>PlayStation 5 Slim</h3><span class="price">&#8369;35,990</span>
+              <p>Disc drive, 1 TB SSD, 4K gaming.</p>
+              <div class="actions">
+                <input type="checkbox" id="f15" class="fav"><label for="f15">Favorite</label>
+                <input type="checkbox" id="c15" class="add"><label for="c15">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="playstation">
+            <div class="thumb">&#127918;<label class="hand" for="pk16" title="Pick to compare">&#9995;<span class="sr">Pick PlayStation 5 Digital to compare</span></label></div>
+            <div class="info"><h3>PlayStation 5 Digital</h3><span class="price">&#8369;30,990</span>
+              <p>Digital-only version, 1 TB SSD.</p>
+              <div class="actions">
+                <input type="checkbox" id="f16" class="fav"><label for="f16">Favorite</label>
+                <input type="checkbox" id="c16" class="add"><label for="c16">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="xbox">
+            <div class="thumb">&#128250;<label class="hand" for="pk17" title="Pick to compare">&#9995;<span class="sr">Pick Xbox Series X to compare</span></label></div>
+            <div class="info"><h3>Xbox Series X</h3><span class="price">&#8369;34,990</span>
+              <p>1 TB SSD, 4K at up to 120 fps.</p>
+              <div class="actions">
+                <input type="checkbox" id="f17" class="fav"><label for="f17">Favorite</label>
+                <input type="checkbox" id="c17" class="add"><label for="c17">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="xbox">
+            <div class="thumb">&#128250;<label class="hand" for="pk18" title="Pick to compare">&#9995;<span class="sr">Pick Xbox Series S to compare</span></label></div>
+            <div class="info"><h3>Xbox Series S</h3><span class="price">&#8369;19,990</span>
+              <p>512 GB SSD, compact and digital-only.</p>
+              <div class="actions">
+                <input type="checkbox" id="f18" class="fav"><label for="f18">Favorite</label>
+                <input type="checkbox" id="c18" class="add"><label for="c18">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="nintendo">
+            <div class="thumb">&#127918;<label class="hand" for="pk19" title="Pick to compare">&#9995;<span class="sr">Pick Nintendo Switch OLED to compare</span></label></div>
+            <div class="info"><h3>Nintendo Switch OLED</h3><span class="price">&#8369;18,990</span>
+              <p>7-inch OLED screen, TV and handheld modes.</p>
+              <div class="actions">
+                <input type="checkbox" id="f19" class="fav"><label for="f19">Favorite</label>
+                <input type="checkbox" id="c19" class="add"><label for="c19">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="nintendo">
+            <div class="thumb">&#127918;<label class="hand" for="pk20" title="Pick to compare">&#9995;<span class="sr">Pick Nintendo Switch Lite to compare</span></label></div>
+            <div class="info"><h3>Nintendo Switch Lite</h3><span class="price">&#8369;11,990</span>
+              <p>Compact handheld-only Switch.</p>
+              <div class="actions">
+                <input type="checkbox" id="f20" class="fav"><label for="f20">Favorite</label>
+                <input type="checkbox" id="c20" class="add"><label for="c20">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="handheld">
+            <div class="thumb">&#128377;<label class="hand" for="pk21" title="Pick to compare">&#9995;<span class="sr">Pick Steam Deck OLED to compare</span></label></div>
+            <div class="info"><h3>Steam Deck OLED</h3><span class="price">&#8369;32,990</span>
+              <p>PC games on a handheld, OLED screen.</p>
+              <div class="actions">
+                <input type="checkbox" id="f21" class="fav"><label for="f21">Favorite</label>
+                <input type="checkbox" id="c21" class="add"><label for="c21">Add to cart</label>
+              </div></div>
+          </article>
+          <article class="product" data-cat="consoles" data-sub="handheld">
+            <div class="thumb">&#128377;<label class="hand" for="pk22" title="Pick to compare">&#9995;<span class="sr">Pick Retro Handheld Console to compare</span></label></div>
+            <div class="info"><h3>Retro Handheld Console</h3><span class="price">&#8369;3,490</span>
+              <p>Pocket console for classic retro games.</p>
+              <div class="actions">
+                <input type="checkbox" id="f22" class="fav"><label for="f22">Favorite</label>
+                <input type="checkbox" id="c22" class="add"><label for="c22">Add to cart</label>
+              </div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="about">
+        <h2>About Us</h2>
+        <p class="prose">WAIS Philippines sells laptops, gadgets, components and accessories to students and professionals across the country.</p>
+      </section>
+
+      <section class="view" id="overview">
+        <h2>Overview</h2>
+        <ul class="prose">
+          <li>Four product categories with live stock lists.</li>
+          <li>Favorites and cart that you can tick on any product.</li>
+          <li>Subscription plans for regular deliveries.</li>
+        </ul>
+      </section>
+
+      <section class="view" id="help">
+        <h2>Help &amp; Settings</h2>
+        <details><summary>How do I add an item to my cart?</summary><p>Press "Add to cart" on a product, then open Cart at the top.</p></details>
+        <details><summary>How do I remove an item?</summary><p>Press the same button again to untick it.</p></details>
+        <details><summary>Where can I see my favorites?</summary><p>Open Favorites at the top of the page.</p></details>
+      </section>
+
+      <section class="view" id="language">
+        <h2>Language</h2>
+        <div class="langs">
+          <label><input type="radio" name="lang" checked> English</label>
+          <label><input type="radio" name="lang"> Filipino</label>
+          <label><input type="radio" name="lang"> Cebuano</label>
+        </div>
+      </section>
+
+      <section class="view" id="orders">
+        <h2>Customer Order</h2>
+        <table>
+          <tr><th>Order</th><th>Item</th><th>Status</th></tr>
+          <tr><td>#1001</td><td>Wireless Mouse</td><td>Delivered</td></tr>
+          <tr><td>#1002</td><td>1 TB NVMe SSD</td><td>Shipped</td></tr>
+          <tr><td>#1003</td><td>Pink Slim 14</td><td>Processing</td></tr>
+        </table>
+      </section>
+
+      <section class="view" id="signin">
+        <h2>Sign in</h2>
+        <form action="#signin">
+          <input type="email" placeholder="Email" aria-label="Email">
+          <input type="password" placeholder="Password" aria-label="Password">
+          <input class="btn" type="submit" value="Sign in">
+        </form>
+      </section>
+
+      <section class="view" id="favorites">
+        <h2>Favorites</h2>
+        <ul class="list">
+          <li id="fi1">Pink Slim 14 <b>&#8369;32,990</b></li>
+          <li id="fi2">Studio Pro 16 <b>&#8369;64,500</b></li>
+          <li id="fi3">Wireless Earbuds <b>&#8369;2,490</b></li>
+          <li id="fi4">Smart Watch S2 <b>&#8369;3,990</b></li>
+          <li id="fi5">16 GB DDR4 RAM <b>&#8369;2,150</b></li>
+          <li id="fi6">1 TB NVMe SSD <b>&#8369;3,780</b></li>
+          <li id="fi7">Wireless Mouse <b>&#8369;590</b></li>
+          <li id="fi8">Laptop Sleeve 14&quot; <b>&#8369;750</b></li>
+          <li id="fi9">USB Flash Drive 64 GB <b>&#8369;350</b></li>
+          <li id="fi10">Jumper Wire Kit <b>&#8369;180</b></li>
+          <li id="fi11">HDMI Cable 2 m <b>&#8369;320</b></li>
+          <li id="fi12">65W USB-C Charger <b>&#8369;1,290</b></li>
+          <li id="fi13">Over-ear Headphones <b>&#8369;2,890</b></li>
+          <li id="fi14">Bluetooth Speaker <b>&#8369;1,890</b></li>
+          <li id="fi15">PlayStation 5 Slim <b>&#8369;35,990</b></li>
+          <li id="fi16">PlayStation 5 Digital <b>&#8369;30,990</b></li>
+          <li id="fi17">Xbox Series X <b>&#8369;34,990</b></li>
+          <li id="fi18">Xbox Series S <b>&#8369;19,990</b></li>
+          <li id="fi19">Nintendo Switch OLED <b>&#8369;18,990</b></li>
+          <li id="fi20">Nintendo Switch Lite <b>&#8369;11,990</b></li>
+          <li id="fi21">Steam Deck OLED <b>&#8369;32,990</b></li>
+          <li id="fi22">Retro Handheld Console <b>&#8369;3,490</b></li>
+        </ul>
+        <p class="empty empty-fav">No favorites yet. Tick "Favorite" on a product.</p>
+      </section>
+
+      <section class="view" id="cart">
+        <h2>Cart</h2>
+        <ul class="list">
+          <li id="ci1">Pink Slim 14 <b>&#8369;32,990</b></li>
+          <li id="ci2">Studio Pro 16 <b>&#8369;64,500</b></li>
+          <li id="ci3">Wireless Earbuds <b>&#8369;2,490</b></li>
+          <li id="ci4">Smart Watch S2 <b>&#8369;3,990</b></li>
+          <li id="ci5">16 GB DDR4 RAM <b>&#8369;2,150</b></li>
+          <li id="ci6">1 TB NVMe SSD <b>&#8369;3,780</b></li>
+          <li id="ci7">Wireless Mouse <b>&#8369;590</b></li>
+          <li id="ci8">Laptop Sleeve 14&quot; <b>&#8369;750</b></li>
+          <li id="ci9">USB Flash Drive 64 GB <b>&#8369;350</b></li>
+          <li id="ci10">Jumper Wire Kit <b>&#8369;180</b></li>
+          <li id="ci11">HDMI Cable 2 m <b>&#8369;320</b></li>
+          <li id="ci12">65W USB-C Charger <b>&#8369;1,290</b></li>
+          <li id="ci13">Over-ear Headphones <b>&#8369;2,890</b></li>
+          <li id="ci14">Bluetooth Speaker <b>&#8369;1,890</b></li>
+          <li id="ci15">PlayStation 5 Slim <b>&#8369;35,990</b></li>
+          <li id="ci16">PlayStation 5 Digital <b>&#8369;30,990</b></li>
+          <li id="ci17">Xbox Series X <b>&#8369;34,990</b></li>
+          <li id="ci18">Xbox Series S <b>&#8369;19,990</b></li>
+          <li id="ci19">Nintendo Switch OLED <b>&#8369;18,990</b></li>
+          <li id="ci20">Nintendo Switch Lite <b>&#8369;11,990</b></li>
+          <li id="ci21">Steam Deck OLED <b>&#8369;32,990</b></li>
+          <li id="ci22">Retro Handheld Console <b>&#8369;3,490</b></li>
+        </ul>
+        <p class="empty empty-cart">Your cart is empty. Press "Add to cart" on a product.</p>
+      </section>
+
+      <section class="view" id="subscription">
+        <h2>Subscription</h2>
+        <div class="plans">
+          <input type="radio" name="plan" id="p1" checked><label for="p1"><b>Basic</b><br>&#8369;199 / month<br>Free shipping</label>
+          <input type="radio" name="plan" id="p2"><label for="p2"><b>Plus</b><br>&#8369;399 / month<br>5% off all items</label>
+          <input type="radio" name="plan" id="p3"><label for="p3"><b>Pro</b><br>&#8369;699 / month<br>10% off + early access</label>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Compare: hand icons are labels for the checkboxes at the top of <body> -->
+<form id="pickform"></form>
+
+<section class="compare" aria-label="Product comparison">
+  <button class="backdrop" type="reset" form="pickform" aria-label="Close comparison"></button>
+  <div class="cmp-window" role="dialog" aria-label="Compare products">
+  <div class="cmp-head"><h2>Compare products</h2><button class="btn" type="reset" form="pickform">Close</button></div>
+  <div class="cmp-grid">
+    <section class="cmp c1"><h3>Pink Slim 14</h3><p class="price">&#8369;32,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Light and easy to carry</li><li>Good for school and office work</li><li>SSD makes it start quickly</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>8 GB RAM limits heavy multitasking</li><li>No dedicated graphics card</li></ul>
+      <label class="btn" for="pk1">Remove</label></section>
+    <section class="cmp c2"><h3>Studio Pro 16</h3><p class="price">&#8369;64,500</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Large 16-inch display</li><li>16 GB RAM handles editing and coding</li><li>1 TB of storage</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Heavier to carry around</li><li>The most expensive item in the store</li></ul>
+      <label class="btn" for="pk2">Remove</label></section>
+    <section class="cmp c3"><h3>Wireless Earbuds</h3><p class="price">&#8369;2,490</p>
+      <h4 class="pro-h">Pros</h4><ul><li>24-hour battery with the case</li><li>Small and cable-free</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Easy to misplace</li><li>Battery wears down over the years</li></ul>
+      <label class="btn" for="pk3">Remove</label></section>
+    <section class="cmp c4"><h3>Smart Watch S2</h3><p class="price">&#8369;3,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Tracks heart rate and sleep</li><li>Health data on your wrist</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Needs regular charging</li><li>Small screen</li></ul>
+      <label class="btn" for="pk4">Remove</label></section>
+    <section class="cmp c5"><h3>16 GB DDR4 RAM</h3><p class="price">&#8369;2,150</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Affordable way to speed up multitasking</li><li>Simple to install</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Must match your motherboard</li><li>Does not improve storage speed</li></ul>
+      <label class="btn" for="pk5">Remove</label></section>
+    <section class="cmp c6"><h3>1 TB NVMe SSD</h3><p class="price">&#8369;3,780</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Fast boot and loading times</li><li>Plenty of space</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Costs more than a hard drive of the same size</li><li>Needs a free M.2 slot</li></ul>
+      <label class="btn" for="pk6">Remove</label></section>
+    <section class="cmp c7"><h3>Wireless Mouse</h3><p class="price">&#8369;590</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Low price</li><li>Quiet clicks</li><li>Long battery life</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Stops working when the battery runs out</li><li>Not ideal for fast gaming</li></ul>
+      <label class="btn" for="pk7">Remove</label></section>
+    <section class="cmp c8"><h3>Laptop Sleeve 14&quot;</h3><p class="price">&#8369;750</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Affordable protection</li><li>Water-resistant</li><li>Slim and light</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Little protection from hard drops</li><li>Fits 14-inch laptops only</li></ul>
+      <label class="btn" for="pk8">Remove</label></section>
+    <section class="cmp c9"><h3>USB Flash Drive 64 GB</h3><p class="price">&#8369;350</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Small and easy to carry</li><li>Cheap way to move files</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Easy to lose</li><li>Slower than an SSD</li></ul>
+      <label class="btn" for="pk9">Remove</label></section>
+    <section class="cmp c10"><h3>Jumper Wire Kit</h3><p class="price">&#8369;180</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Great for electronics projects</li><li>Many pieces in one kit</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Not for power or data cabling</li><li>Thin wires can loosen</li></ul>
+      <label class="btn" for="pk10">Remove</label></section>
+    <section class="cmp c11"><h3>HDMI Cable 2 m</h3><p class="price">&#8369;320</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Carries video and audio in one cable</li><li>Long enough for a desk setup</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Needs matching ports</li><li>Does not carry power</li></ul>
+      <label class="btn" for="pk11">Remove</label></section>
+    <section class="cmp c12"><h3>65W USB-C Charger</h3><p class="price">&#8369;1,290</p>
+      <h4 class="pro-h">Pros</h4><ul><li>One charger for laptop and phone</li><li>Fast charging</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Bulkier than a phone charger</li><li>Needs a USB-C cable</li></ul>
+      <label class="btn" for="pk12">Remove</label></section>
+    <section class="cmp c13"><h3>Over-ear Headphones</h3><p class="price">&#8369;2,890</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Comfortable for long listening</li><li>Fuller sound than small earbuds</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Bulky to carry</li><li>Ears can get warm</li></ul>
+      <label class="btn" for="pk13">Remove</label></section>
+    <section class="cmp c14"><h3>Bluetooth Speaker</h3><p class="price">&#8369;1,890</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Fills a room with sound</li><li>Portable and wireless</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Less private than headphones</li><li>Needs regular charging</li></ul>
+      <label class="btn" for="pk14">Remove</label></section>
+    <section class="cmp c15"><h3>PlayStation 5 Slim</h3><p class="price">&#8369;35,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Strong exclusive games</li><li>Fast loading with the built-in SSD</li><li>Disc drive included</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Expensive for the console alone</li><li>New games cost more than on PC</li></ul>
+      <label class="btn" for="pk15">Remove</label></section>
+    <section class="cmp c16"><h3>PlayStation 5 Digital</h3><p class="price">&#8369;30,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Lower price than the disc model</li><li>Same fast performance</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>No disc drive, digital games only</li><li>Cannot resell or lend games</li></ul>
+      <label class="btn" for="pk16">Remove</label></section>
+    <section class="cmp c17"><h3>Xbox Series X</h3><p class="price">&#8369;34,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Very powerful hardware</li><li>Game Pass offers many games for a monthly fee</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Fewer exclusive games</li><li>Large and heavy</li></ul>
+      <label class="btn" for="pk17">Remove</label></section>
+    <section class="cmp c18"><h3>Xbox Series S</h3><p class="price">&#8369;19,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Cheaper way into Xbox</li><li>Small and quiet</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>No disc drive</li><li>Lower resolution than the Series X</li></ul>
+      <label class="btn" for="pk18">Remove</label></section>
+    <section class="cmp c19"><h3>Nintendo Switch OLED</h3><p class="price">&#8369;18,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Play on a TV or on the go</li><li>Bright OLED screen</li><li>Great for family and party games</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Less powerful than PS5 or Xbox</li><li>Joy-Con drift can happen</li></ul>
+      <label class="btn" for="pk19">Remove</label></section>
+    <section class="cmp c20"><h3>Nintendo Switch Lite</h3><p class="price">&#8369;11,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Lowest-priced Nintendo option</li><li>Light and portable</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Handheld only, no TV mode</li><li>Controls cannot be detached</li></ul>
+      <label class="btn" for="pk20">Remove</label></section>
+    <section class="cmp c21"><h3>Steam Deck OLED</h3><p class="price">&#8369;32,990</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Plays a PC game library on the go</li><li>Large OLED screen</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Battery drains fast on big games</li><li>Some games do not run well</li></ul>
+      <label class="btn" for="pk21">Remove</label></section>
+    <section class="cmp c22"><h3>Retro Handheld Console</h3><p class="price">&#8369;3,490</p>
+      <h4 class="pro-h">Pros</h4><ul><li>Very low price</li><li>Plays classic retro games</li></ul>
+      <h4 class="con-h">Cons</h4><ul><li>Build quality varies</li><li>Lower-quality screen and sound</li></ul>
+      <label class="btn" for="pk22">Remove</label></section>
+  </div>
+  </div>
+</section>
+
+<div class="tray">
+  <span class="m-one">1 picked. Pick one more product to compare.</span>
+  <span class="m-two">Comparing 2 products.</span>
+  <span class="m-many">Too many picked. Remove one to compare.</span>
+  <button class="btn" type="reset" form="pickform">Clear picks</button>
+</div>
+</body>
+</html>

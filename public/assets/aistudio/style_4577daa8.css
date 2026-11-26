@@ -1,0 +1,918 @@
+/* WAIS - pure CSS interactivity (no JavaScript) */
+:root {
+  --bg: #cdf4fb;
+  --ink: #101a33;
+  --gray: #b8b3b3;
+  --hover: #7fdff2;
+  --line: 2px solid var(--ink);
+  --green1: #b4dc72;
+  --green2: #86c46a;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    500 15px/1.4 "Barlow Semi Condensed",
+    "Bahnschrift",
+    "Arial Narrow",
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid #3a5fe0;
+  outline-offset: 2px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  border-right: var(--line);
+  padding: 16px 8px;
+}
+.home {
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  text-decoration: none;
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 2px 0;
+  margin-bottom: 14px;
+}
+.home:hover {
+  background: var(--hover);
+}
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+.sidebar .sub {
+  padding-left: 14px;
+}
+.group {
+  background: var(--gray);
+  border-radius: 8px;
+  margin: 2px 0 8px;
+  padding: 2px 4px 6px;
+}
+.group > a {
+  font-weight: 600;
+}
+
+/* current page highlight */
+body:has(#about:target) .sidebar a[href="#about"],
+body:has(#overview:target) .sidebar a[href="#overview"],
+body:has(#laptop:target) .sidebar a[href="#laptop"],
+body:has(#gadget:target) .sidebar a[href="#gadget"],
+body:has(#components:target) .sidebar a[href="#components"],
+body:has(#accessories:target) .sidebar a[href="#accessories"],
+body:has(#usbs:target) .sidebar a[href="#usbs"],
+body:has(#wires:target) .sidebar a[href="#wires"],
+body:has(#cables:target) .sidebar a[href="#cables"],
+body:has(#chargers:target) .sidebar a[href="#chargers"],
+body:has(#harddrives:target) .sidebar a[href="#harddrives"],
+body:has(#rams:target) .sidebar a[href="#rams"],
+body:has(#smartwatch:target) .sidebar a[href="#smartwatch"],
+body:has(#headphones:target) .sidebar a[href="#headphones"],
+body:has(#earphones:target) .sidebar a[href="#earphones"],
+body:has(#speakers:target) .sidebar a[href="#speakers"],
+body:has(#consoles:target) .sidebar a[href="#consoles"],
+body:has(#playstation:target) .sidebar a[href="#playstation"],
+body:has(#xbox:target) .sidebar a[href="#xbox"],
+body:has(#nintendo:target) .sidebar a[href="#nintendo"],
+body:has(#handheld:target) .sidebar a[href="#handheld"],
+body:has(#help:target) .sidebar a[href="#help"],
+body:has(#language:target) .sidebar a[href="#language"],
+body:has(#orders:target) .sidebar a[href="#orders"],
+body:has(#signin:target) .sidebar a[href="#signin"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+.logo i {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.search {
+  flex: 1;
+  min-width: 140px;
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink);
+}
+.btn {
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 2px 12px;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--hover);
+}
+
+/* ---------- views (shown with :target) ---------- */
+.content {
+  padding: 6px 18px 28px;
+}
+.view {
+  display: none;
+}
+.view:target,
+.view:has(:target),
+body:not(:has(:target)) #inventory {
+  display: block;
+}
+h2 {
+  margin: 6px 0 12px;
+  font-size: 22px;
+}
+.cat-title {
+  display: none;
+}
+.cat-title:target {
+  display: block;
+}
+body:has(.cat-title:target) .all-title {
+  display: none;
+}
+.prose {
+  max-width: 60ch;
+}
+
+/* category filters */
+body:has(#laptop:target) .product:not([data-cat="laptop"]),
+body:has(#gadget:target) .product:not([data-cat="gadget"]),
+body:has(#components:target) .product:not([data-cat="components"]),
+body:has(#accessories:target) .product:not([data-cat="accessories"]),
+body:has(#usbs:target) .product:not([data-sub="usbs"]),
+body:has(#wires:target) .product:not([data-sub="wires"]),
+body:has(#cables:target) .product:not([data-sub="cables"]),
+body:has(#chargers:target) .product:not([data-sub="chargers"]),
+body:has(#harddrives:target) .product:not([data-sub="harddrives"]),
+body:has(#rams:target) .product:not([data-sub="rams"]),
+body:has(#smartwatch:target) .product:not([data-sub="smartwatch"]),
+body:has(#headphones:target) .product:not([data-sub="headphones"]),
+body:has(#earphones:target) .product:not([data-sub="earphones"]),
+body:has(#speakers:target) .product:not([data-sub="speakers"]),
+body:has(#consoles:target) .product:not([data-cat="consoles"]),
+body:has(#playstation:target) .product:not([data-sub="playstation"]),
+body:has(#xbox:target) .product:not([data-sub="xbox"]),
+body:has(#nintendo:target) .product:not([data-sub="nintendo"]),
+body:has(#handheld:target) .product:not([data-sub="handheld"]) {
+  display: none;
+}
+
+/* ---------- product grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr));
+  gap: 14px;
+}
+.product {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 rgba(16, 26, 51, 0.18);
+}
+.thumb {
+  position: relative;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  background:
+    radial-gradient(ellipse 28px 10px at 28% 30%, #fff 98%, transparent),
+    radial-gradient(ellipse 34px 11px at 76% 22%, #fff 98%, transparent),
+    radial-gradient(
+      ellipse 60% 26px at 20% 100%,
+      var(--green1) 98%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 70% 30px at 85% 105%,
+      var(--green2) 98%,
+      transparent
+    ),
+    linear-gradient(#bfeaf7, #e6fafe 70%);
+}
+.thumb.pink {
+  background: linear-gradient(135deg, #3c8de8, #9a6bd6 60%, #e98fc2);
+  overflow: hidden;
+}
+.thumb.pink b {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  color: #2b52d8;
+  -webkit-text-stroke: 1.5px #fff;
+  paint-order: stroke fill;
+  text-shadow: 2px 2px 0 #ff7ab8;
+}
+.thumb.pink .screen {
+  position: absolute;
+  left: 34px;
+  top: 30px;
+  width: 66px;
+  height: 42px;
+  background: #f05f9d;
+  border: 3px solid #ffd2e6;
+  border-radius: 4px;
+  transform: perspective(160px) rotateX(18deg) rotate(-8deg);
+}
+.thumb.pink .base {
+  position: absolute;
+  left: 20px;
+  top: 68px;
+  width: 92px;
+  height: 20px;
+  background: #ff8fbd;
+  border-radius: 3px 3px 10px 10px;
+  transform: rotate(-8deg) skewX(-18deg);
+  box-shadow: 0 4px 0 #c64a86;
+}
+.info {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.price {
+  font-weight: 700;
+}
+.info p {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+.actions input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.actions label {
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.actions label:hover {
+  background: var(--hover);
+}
+.actions input:focus-visible + label {
+  outline: 3px solid #3a5fe0;
+  outline-offset: 2px;
+}
+.fav:checked + label {
+  background: #ffd2e6;
+}
+.fav:checked + label::before {
+  content: "\2665  ";
+}
+.fav + label::before {
+  content: "\2661  ";
+}
+.add:checked + label {
+  background: var(--green1);
+}
+
+/* ---------- cart / favorites lists ---------- */
+.list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  max-width: 420px;
+}
+.list li {
+  display: none;
+  justify-content: space-between;
+  background: #fff;
+  border: var(--line);
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+}
+.empty {
+  display: none;
+}
+body:has(#c1:checked) #ci1,
+body:has(#c2:checked) #ci2,
+body:has(#c3:checked) #ci3,
+body:has(#c4:checked) #ci4,
+body:has(#c5:checked) #ci5,
+body:has(#c6:checked) #ci6,
+body:has(#c7:checked) #ci7,
+body:has(#c8:checked) #ci8,
+body:has(#c9:checked) #ci9,
+body:has(#c10:checked) #ci10,
+body:has(#c11:checked) #ci11,
+body:has(#c12:checked) #ci12,
+body:has(#c13:checked) #ci13,
+body:has(#c14:checked) #ci14,
+body:has(#c15:checked) #ci15,
+body:has(#c16:checked) #ci16,
+body:has(#c17:checked) #ci17,
+body:has(#c18:checked) #ci18,
+body:has(#c19:checked) #ci19,
+body:has(#c20:checked) #ci20,
+body:has(#c21:checked) #ci21,
+body:has(#c22:checked) #ci22,
+body:has(#f1:checked) #fi1,
+body:has(#f2:checked) #fi2,
+body:has(#f3:checked) #fi3,
+body:has(#f4:checked) #fi4,
+body:has(#f5:checked) #fi5,
+body:has(#f6:checked) #fi6,
+body:has(#f7:checked) #fi7,
+body:has(#f8:checked) #fi8,
+body:has(#f9:checked) #fi9,
+body:has(#f10:checked) #fi10,
+body:has(#f11:checked) #fi11,
+body:has(#f12:checked) #fi12,
+body:has(#f13:checked) #fi13,
+body:has(#f14:checked) #fi14,
+body:has(#f15:checked) #fi15,
+body:has(#f16:checked) #fi16,
+body:has(#f17:checked) #fi17,
+body:has(#f18:checked) #fi18,
+body:has(#f19:checked) #fi19,
+body:has(#f20:checked) #fi20,
+body:has(#f21:checked) #fi21,
+body:has(#f22:checked) #fi22 {
+  display: flex;
+}
+body:not(:has(.add:checked)) .empty-cart,
+body:not(:has(.fav:checked)) .empty-fav {
+  display: block;
+}
+
+/* ---------- misc views ---------- */
+details {
+  background: #fff;
+  border: var(--line);
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  max-width: 520px;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.plans {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.plans input {
+  position: absolute;
+  opacity: 0;
+}
+.plans label {
+  display: block;
+  width: 170px;
+  background: #fff;
+  border: var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.plans input:checked + label {
+  background: var(--green1);
+}
+.plans input:focus-visible + label {
+  outline: 3px solid #3a5fe0;
+  outline-offset: 2px;
+}
+.langs label {
+  display: block;
+  padding: 3px 0;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+  background: #fff;
+  max-width: 520px;
+  width: 100%;
+}
+th,
+td {
+  border: var(--line);
+  padding: 5px 10px;
+  text-align: left;
+}
+form {
+  display: grid;
+  gap: 10px;
+  max-width: 300px;
+}
+form input:not([type="radio"]) {
+  font: inherit;
+  padding: 5px 12px;
+  border: var(--line);
+  border-radius: 999px;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    border-right: 0;
+    border-bottom: var(--line);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product {
+    transition: none;
+  }
+}
+
+/* ---------- compare: hand icon, tray, panel (CSS only) ----------
+   The 8 .pick checkboxes are direct children of <body>, so "~" can count
+   how many are checked: 1 = hint, exactly 2 = comparison, 3+ = warning. */
+.pick {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.hand {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: var(--line);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s;
+}
+.hand:hover {
+  background: var(--hover);
+  transform: rotate(-12deg);
+}
+#pk1:checked ~ .app label[for="pk1"],
+#pk2:checked ~ .app label[for="pk2"],
+#pk3:checked ~ .app label[for="pk3"],
+#pk4:checked ~ .app label[for="pk4"],
+#pk5:checked ~ .app label[for="pk5"],
+#pk6:checked ~ .app label[for="pk6"],
+#pk7:checked ~ .app label[for="pk7"],
+#pk8:checked ~ .app label[for="pk8"],
+#pk9:checked ~ .app label[for="pk9"],
+#pk10:checked ~ .app label[for="pk10"],
+#pk11:checked ~ .app label[for="pk11"],
+#pk12:checked ~ .app label[for="pk12"],
+#pk13:checked ~ .app label[for="pk13"],
+#pk14:checked ~ .app label[for="pk14"],
+#pk15:checked ~ .app label[for="pk15"],
+#pk16:checked ~ .app label[for="pk16"],
+#pk17:checked ~ .app label[for="pk17"],
+#pk18:checked ~ .app label[for="pk18"],
+#pk19:checked ~ .app label[for="pk19"],
+#pk20:checked ~ .app label[for="pk20"],
+#pk21:checked ~ .app label[for="pk21"],
+#pk22:checked ~ .app label[for="pk22"] {
+  background: var(--green1);
+  transform: scale(1.12);
+}
+#pk1:focus-visible ~ .app label[for="pk1"],
+#pk2:focus-visible ~ .app label[for="pk2"],
+#pk3:focus-visible ~ .app label[for="pk3"],
+#pk4:focus-visible ~ .app label[for="pk4"],
+#pk5:focus-visible ~ .app label[for="pk5"],
+#pk6:focus-visible ~ .app label[for="pk6"],
+#pk7:focus-visible ~ .app label[for="pk7"],
+#pk8:focus-visible ~ .app label[for="pk8"],
+#pk9:focus-visible ~ .app label[for="pk9"],
+#pk10:focus-visible ~ .app label[for="pk10"],
+#pk11:focus-visible ~ .app label[for="pk11"],
+#pk12:focus-visible ~ .app label[for="pk12"],
+#pk13:focus-visible ~ .app label[for="pk13"],
+#pk14:focus-visible ~ .app label[for="pk14"],
+#pk15:focus-visible ~ .app label[for="pk15"],
+#pk16:focus-visible ~ .app label[for="pk16"],
+#pk17:focus-visible ~ .app label[for="pk17"],
+#pk18:focus-visible ~ .app label[for="pk18"],
+#pk19:focus-visible ~ .app label[for="pk19"],
+#pk20:focus-visible ~ .app label[for="pk20"],
+#pk21:focus-visible ~ .app label[for="pk21"],
+#pk22:focus-visible ~ .app label[for="pk22"] {
+  outline: 3px solid #3a5fe0;
+  outline-offset: 2px;
+}
+
+.tray {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 24px);
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  z-index: 6;
+}
+.pick:checked ~ .tray {
+  display: flex;
+}
+.m-one,
+.m-two,
+.m-many {
+  display: none;
+}
+.pick:checked ~ .tray .m-one {
+  display: inline;
+}
+.pick:checked ~ .pick:checked ~ .tray .m-one {
+  display: none;
+}
+.pick:checked ~ .pick:checked ~ .tray .m-two {
+  display: inline;
+}
+.pick:checked ~ .pick:checked ~ .pick:checked ~ .tray .m-two {
+  display: none;
+}
+.pick:checked ~ .pick:checked ~ .pick:checked ~ .tray .m-many {
+  display: inline;
+}
+
+.compare {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  place-items: center;
+  padding: 12px;
+  background: rgba(16, 26, 51, 0.55);
+}
+.pick:checked ~ .pick:checked ~ .compare {
+  display: grid;
+}
+.pick:checked ~ .pick:checked ~ .pick:checked ~ .compare {
+  display: none;
+}
+.compare h2 {
+  margin-top: 0;
+}
+.cmp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.cmp {
+  display: none;
+  background: #fff;
+  border: var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+#pk1:checked ~ .compare .c1,
+#pk2:checked ~ .compare .c2,
+#pk3:checked ~ .compare .c3,
+#pk4:checked ~ .compare .c4,
+#pk5:checked ~ .compare .c5,
+#pk6:checked ~ .compare .c6,
+#pk7:checked ~ .compare .c7,
+#pk8:checked ~ .compare .c8,
+#pk9:checked ~ .compare .c9,
+#pk10:checked ~ .compare .c10,
+#pk11:checked ~ .compare .c11,
+#pk12:checked ~ .compare .c12,
+#pk13:checked ~ .compare .c13,
+#pk14:checked ~ .compare .c14,
+#pk15:checked ~ .compare .c15,
+#pk16:checked ~ .compare .c16,
+#pk17:checked ~ .compare .c17,
+#pk18:checked ~ .compare .c18,
+#pk19:checked ~ .compare .c19,
+#pk20:checked ~ .compare .c20,
+#pk21:checked ~ .compare .c21,
+#pk22:checked ~ .compare .c22 {
+  display: block;
+}
+.cmp h3 {
+  margin: 0;
+}
+.cmp h4 {
+  margin: 10px 0 4px;
+  font-size: 14px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.pro-h {
+  background: var(--green1);
+}
+.con-h {
+  background: #ffd2e6;
+}
+.cmp ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  font-size: 14px;
+}
+@media (max-width: 520px) {
+  .cmp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- nested sidebar menu ---------- */
+.sidebar .sub2 {
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+/* ---------- discount strip (moves left to right) ---------- */
+.deals {
+  overflow: hidden;
+  background: #fff;
+  border-block: var(--line);
+  padding: 8px 0;
+}
+.track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: slide-right 60s linear infinite;
+}
+.dup {
+  display: contents;
+}
+.deals:hover .track,
+.deals:focus-within .track {
+  animation-play-state: paused;
+}
+@keyframes slide-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.deal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 220px;
+  padding: 6px 10px;
+  background: var(--bg);
+  border: var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.deal:hover {
+  background: var(--hover);
+}
+.dthumb {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  font-size: 26px;
+  border-radius: 8px;
+  background: linear-gradient(#bfeaf7, #e6fafe);
+}
+.dtext {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.dtext s {
+  opacity: 0.6;
+}
+.dtext strong {
+  color: #c2185b;
+}
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  background: #ff5c8a;
+  color: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+  .deals {
+    overflow-x: auto;
+  }
+}
+
+/* ---------- responsive: tablet and phone ---------- */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    border-right: 0;
+    border-bottom: var(--line);
+  }
+  .topbar .search {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .content {
+    padding: 6px 10px 90px;
+  }
+  .deal {
+    min-width: 190px;
+  }
+  .hand {
+    width: 40px;
+    height: 40px;
+  }
+  .actions label,
+  .btn {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- fit the screen: no sideways stretching, scroll up and down only ---------- */
+.app > *,
+main,
+.sidebar,
+.product,
+.content {
+  min-width: 0;
+}
+main {
+  max-width: 100%;
+}
+.deals {
+  max-width: 100%;
+  contain: paint;
+}
+.info p,
+.info h3 {
+  overflow-wrap: anywhere;
+}
+.actions {
+  flex-wrap: wrap;
+}
+
+/* ---------- compare hint + phone spacing for the compare panel ---------- */
+.tip {
+  margin: 0 0 12px;
+  padding: 6px 12px;
+  background: #fff;
+  border: var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* ---------- compare window: centered pop-up with dimmed background ---------- */
+.compare .backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.cmp-window {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+  background: var(--bg);
+  border: var(--line);
+  border-radius: 14px;
+  padding: 14px 18px 18px;
+  box-shadow: 0 10px 0 rgba(16, 26, 51, 0.25);
+}
+.cmp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cmp-head h2 {
+  margin: 0;
+}

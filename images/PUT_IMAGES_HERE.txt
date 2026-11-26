@@ -1,0 +1,6 @@
+Put your product image files (.jpg, .png, .webp) inside this folder.
+
+Example:
+If you put "laptop.jpg" in this folder, type:
+images/laptop.jpg
+into the Image: line in database/*.txt or the "Image (src)" box in admin.html.

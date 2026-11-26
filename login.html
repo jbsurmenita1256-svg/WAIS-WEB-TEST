@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAIS — Login &amp; Registration</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrap">
+    <div class="auth-top">
+      <a class="btn" href="index.html">&larr; Main Page</a>
+      <div class="hero-actions">
+        <a class="btn green" href="shop.html" id="goShopBtn" hidden>Enter Shop</a>
+        <a class="btn" href="admin.html" id="goAdminBtn" hidden>Admin Editor</a>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <h1>WAIS Account</h1>
+      <p id="sessionBox" class="status-box" hidden></p>
+
+      <div class="tabs">
+        <button class="btn green" type="button" id="showLoginTab">Login</button>
+        <button class="btn" type="button" id="showRegisterTab">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <label>Username or Email
+          <input type="text" id="loginEmail" placeholder="Username or email" required />
+        </label>
+        <label>Password
+          <input type="password" id="loginPass" placeholder="Password" required />
+        </label>
+        <button class="btn green" type="submit">Login</button>
+      </form>
+
+      <!-- Registration Form (Customer accounts only) -->
+      <form id="registerForm" class="auth-form" hidden>
+        <label>Full Name
+          <input type="text" id="regName" placeholder="Juan Dela Cruz" required />
+        </label>
+        <label>Username or Email
+          <input type="text" id="regEmail" placeholder="Username or email" required />
+        </label>
+        <label>Password
+          <input type="password" id="regPass" placeholder="Create password" required minlength="4" />
+        </label>
+        <button class="btn green" type="submit">Create Account</button>
+      </form>
+
+      <p id="authMessage" class="auth-msg" role="status"></p>
+
+      <div class="auth-footer">
+        <button class="btn" type="button" id="logoutBtn" hidden>Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAIS — Admin Table Database Editor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+  <div class="admin-wrap">
+    <header class="admin-header">
+      <div>
+        <h1>Admin Table Database</h1>
+        <p id="adminWho" class="muted"></p>
+      </div>
+      <div class="admin-nav">
+        <a class="btn" href="index.html">Main Page</a>
+        <a class="btn" href="shop.html">Shop</a>
+        <a class="btn" href="login.html">Account</a>
+        <button class="btn" type="button" id="adminLogoutBtn">Sign Out</button>
+      </div>
+    </header>
+
+    <!-- Shown if user is not logged in as admin -->
+    <section class="home-card" id="adminLocked" hidden>
+      <h2>Admin Access Required</h2>
+      <p>Please sign in with an <strong>Admin</strong> account on the login page to edit the product and user tables.</p>
+      <a class="btn green" href="login.html">Go to Login / Setup Admin</a>
+    </section>
+
+    <!-- Shown when logged in as admin -->
+    <section id="adminPanel" hidden>
+      <div class="admin-toolbar">
+        <label>Select Database Table:
+          <select id="dbSelect" class="dropdown">
+            <option value="Laptop">Laptop (database/laptop.txt)</option>
+            <option value="Components">Components (database/components.txt)</option>
+            <option value="Accessories">Accessories (database/accessories.txt)</option>
+            <option value="Gaming Consoles">Gaming Consoles (database/gaming_consoles.txt)</option>
+            <option value="Users">Users (database/users.txt)</option>
+          </select>
+        </label>
+
+        <div class="toolbar-btns">
+          <button class="btn green" type="button" id="saveBrowserBtn">Save Changes</button>
+          <button class="btn" type="button" id="downloadTxtBtn">Download .txt</button>
+          <button class="btn" type="button" id="resetTableBtn">Reload from .txt</button>
+        </div>
+      </div>
+
+      <p id="adminStatus" class="status-box" hidden></p>
+
+      <!-- Add Product Row Form -->
+      <form id="addProductForm" class="add-row-form">
+        <h3>Add New Product Row</h3>
+        <div class="row-inputs">
+          <input type="text" id="newName" placeholder="Product Name" required />
+          <input type="number" id="newPrice" placeholder="Price (₱)" min="0" required />
+          <input type="text" id="newImage" placeholder="Image src (e.g. images/laptop.jpg)" />
+          <input type="text" id="newAlt" placeholder="Alt text (default: Image not yet added)" />
+          <input type="date" id="newDate" aria-label="Date added" required />
+          <input type="text" id="newDesc" placeholder="Short description" />
+          <input type="text" id="newPros" placeholder="Pros (separate with ;)" />
+          <input type="text" id="newCons" placeholder="Cons (separate with ;)" />
+          <button class="btn green" type="submit">+ Add Row</button>
+        </div>
+      </form>
+
+      <!-- Add User Row Form (when Users table is selected) -->
+      <form id="addUserForm" class="add-row-form" hidden>
+        <h3>Add New User Row</h3>
+        <div class="row-inputs">
+          <input type="text" id="newUserEmail" placeholder="Username or Email" required />
+          <input type="text" id="newUserName" placeholder="Full Name" required />
+          <select id="newUserRole" class="dropdown">
+            <option value="customer">customer</option>
+            <option value="admin">admin</option>
+          </select>
+          <input type="password" id="newUserPass" placeholder="Password" required />
+          <button class="btn green" type="submit">+ Add User</button>
+        </div>
+      </form>
+
+      <!-- Editable Table -->
+      <div class="table-scroll">
+        <table class="admin-table" id="adminTable">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

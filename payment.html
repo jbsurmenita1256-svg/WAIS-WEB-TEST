@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAIS Computer &amp; Gadgets — QR Payment</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pay-page">
+  <div class="pay-wrap">
+    <div class="auth-top">
+      <a class="btn" href="shop.html">&larr; Back to Shop</a>
+      <span id="payAccount" class="muted"></span>
+    </div>
+
+    <!-- Shown ONLY if user is NOT logged in -->
+    <section class="home-card" id="payLocked" hidden>
+      <h2>Login Required</h2>
+      <p>Please sign in first before completing a payment.</p>
+      <a class="btn green" href="login.html">Go to Login</a>
+    </section>
+
+    <!-- Shown if cart/checkout is empty -->
+    <section class="home-card" id="payEmpty" hidden>
+      <h2>No Pending Order</h2>
+      <p>Your checkout list is empty. Add products to your cart in the shop first.</p>
+      <a class="btn green" href="shop.html">Return to Shop</a>
+    </section>
+
+    <!-- Main QR Payment Card -->
+    <section class="pay-card" id="payPanel" hidden>
+      <h1>QR Payment Checkout</h1>
+      <p class="muted">Scan the QR code below using your e-wallet or banking app, then confirm your payment.</p>
+
+      <div class="pay-grid">
+        <!-- Left: Order Summary -->
+        <div class="pay-box">
+          <h2>Order Summary</h2>
+          <ul class="list" id="payItemList"></ul>
+          <p class="pay-row"><span>Subtotal:</span> <strong id="paySubtotal">&#8369;0</strong></p>
+          <p class="pay-row"><span>Plan Discount:</span> <strong id="payDiscount">0%</strong></p>
+          <p class="total-line">Total to Pay: <strong id="payTotal">&#8369;0</strong></p>
+        </div>
+
+        <!-- Right: QR Code Method -->
+        <div class="pay-box qr-box">
+          <h2>Select QR Method</h2>
+          <div class="qr-methods" id="qrMethods">
+            <label class="qr-choice">
+              <input type="radio" name="qrMethod" value="GCash QR" checked />
+              <span>GCash QR</span>
+            </label>
+            <label class="qr-choice">
+              <input type="radio" name="qrMethod" value="Maya QR" />
+              <span>Maya QR</span>
+            </label>
+            <label class="qr-choice">
+              <input type="radio" name="qrMethod" value="Bank QRPh" />
+              <span>Bank QRPh</span>
+            </label>
+          </div>
+
+          <div class="qr-frame">
+            <p class="qr-label" id="qrMethodLabel">GCash QR · WAIS Computer &amp; Gadgets</p>
+            <canvas id="qrCanvas" width="189" height="189" aria-label="QR Code"></canvas>
+            <p class="qr-amount" id="qrAmountText">Amount: &#8369;0</p>
+          </div>
+
+          <form id="payForm" class="auth-form">
+            <label>Payment Reference No. (optional for demo)
+              <input type="text" id="payRefInput" placeholder="e.g. 123456789" />
+            </label>
+            <button class="btn green" type="submit" id="confirmPayBtn">I Have Paid — Confirm Order</button>
+          </form>
+
+          <p id="payStatus" class="status-box" hidden></p>
+          <div id="payDoneActions" class="hero-actions" hidden>
+            <a class="btn green" href="shop.html#orders">View Customer Orders</a>
+            <a class="btn" href="shop.html">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="payment.js"></script>
+</body>
+</html>

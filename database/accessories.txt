@@ -1,0 +1,69 @@
+categories: Accessories
+
+Wireless Earbuds | 2490
+Image: 
+Alt: Wireless earbuds with charging case
+Description: 24-hour battery with a charging case.
+Pros:
+- 24-hour battery with the case
+- Small and cable-free
+Cons:
+- Easy to misplace
+- Battery wears down over the years
+
+Smart Watch S2 | 3990
+Image: 
+Alt: Smart Watch S2 fitness watch
+Description: Heart-rate and sleep tracking.
+Pros:
+- Tracks heart rate and sleep
+- Health data on your wrist
+Cons:
+- Needs regular charging
+- Small screen
+
+Wireless Mouse | 590
+Image: 
+Alt: Wireless mouse
+Description: Quiet clicks, 12-month battery.
+Pros:
+- Low price
+- Quiet clicks
+- Long battery life
+Cons:
+- Stops working when the battery runs out
+- Not ideal for fast gaming
+
+Laptop Sleeve 14" | 750
+Image: 
+Alt: 14-inch padded laptop sleeve
+Description: Padded, water-resistant sleeve.
+Pros:
+- Affordable protection
+- Water-resistant
+- Slim and light
+Cons:
+- Little protection from hard drops
+- Fits 14-inch laptops only
+
+Over-ear Headphones | 2890
+Image: 
+Alt: Over-ear cushioned headphones
+Description: Cushioned ear cups for long listening.
+Pros:
+- Comfortable for long listening
+- Fuller sound than small earbuds
+Cons:
+- Bulky to carry
+- Ears can get warm
+
+Bluetooth Speaker | 1890
+Image: 
+Alt: Portable Bluetooth speaker
+Description: Portable sound for rooms and trips.
+Pros:
+- Fills a room with sound
+- Portable and wireless
+Cons:
+- Less private than headphones
+- Needs regular charging

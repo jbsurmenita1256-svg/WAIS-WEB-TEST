@@ -1,0 +1,91 @@
+categories: Gaming Consoles
+
+PlayStation 5 Slim | 35990
+Image: 
+Alt: PlayStation 5 Slim console
+Description: Disc drive, 1 TB SSD, 4K gaming.
+Pros:
+- Strong exclusive games
+- Fast loading with the built-in SSD
+- Disc drive included
+Cons:
+- Expensive for the console alone
+- New games cost more than on PC
+
+PlayStation 5 Digital | 30990
+Image: 
+Alt: PlayStation 5 Digital Edition console
+Description: Digital-only version, 1 TB SSD.
+Pros:
+- Lower price than the disc model
+- Same fast performance
+Cons:
+- No disc drive, digital games only
+- Cannot resell or lend games
+
+Xbox Series X | 34990
+Image: 
+Alt: Xbox Series X console
+Description: 1 TB SSD, 4K at up to 120 fps.
+Pros:
+- Very powerful hardware
+- Game Pass offers many games for a monthly fee
+Cons:
+- Fewer exclusive games
+- Large and heavy
+
+Xbox Series S | 19990
+Image: 
+Alt: Xbox Series S compact console
+Description: 512 GB SSD, compact and digital-only.
+Pros:
+- Cheaper way into Xbox
+- Small and quiet
+Cons:
+- No disc drive
+- Lower resolution than the Series X
+
+Nintendo Switch OLED | 18990
+Image: 
+Alt: Nintendo Switch OLED console
+Description: 7-inch OLED screen, TV and handheld modes.
+Pros:
+- Play on a TV or on the go
+- Bright OLED screen
+- Great for family and party games
+Cons:
+- Less powerful than PS5 or Xbox
+- Joy-Con drift can happen
+
+Nintendo Switch Lite | 11990
+Image: 
+Alt: Nintendo Switch Lite handheld console
+Description: Compact handheld-only Switch.
+Pros:
+- Lowest-priced Nintendo option
+- Light and portable
+Cons:
+- Handheld only, no TV mode
+- Controls cannot be detached
+
+Steam Deck OLED | 32990
+Image: 
+Alt: Steam Deck OLED handheld PC
+Description: PC games on a handheld, OLED screen.
+Pros:
+- Plays a PC game library on the go
+- Large OLED screen
+Cons:
+- Battery drains fast on big games
+- Some games do not run well
+
+Retro Handheld Console | 3490
+Image: 
+Alt: Retro handheld gaming console
+Description: Pocket console for classic retro games.
+Pros:
+- Very low price
+- Plays classic retro games
+Cons:
+- Build quality varies
+- Lower-quality screen and sound

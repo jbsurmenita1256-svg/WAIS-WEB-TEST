@@ -1,0 +1,67 @@
+categories: Components
+
+16 GB DDR4 RAM | 2150
+Image: 
+Alt: 16 GB DDR4 RAM memory stick
+Description: 3200 MHz memory module.
+Pros:
+- Affordable way to speed up multitasking
+- Simple to install
+Cons:
+- Must match your motherboard
+- Does not improve storage speed
+
+1 TB NVMe SSD | 3780
+Image: 
+Alt: 1 TB NVMe SSD drive
+Description: Fast storage for boot and games.
+Pros:
+- Fast boot and loading times
+- Plenty of space
+Cons:
+- Costs more than a hard drive of the same size
+- Needs a free M.2 slot
+
+USB Flash Drive 64 GB | 350
+Image: 
+Alt: 64 GB USB flash drive
+Description: Pocket storage for files and backups.
+Pros:
+- Small and easy to carry
+- Cheap way to move files
+Cons:
+- Easy to lose
+- Slower than an SSD
+
+Jumper Wire Kit | 180
+Image: 
+Alt: 40-piece jumper wire kit
+Description: 40 pieces for breadboards and projects.
+Pros:
+- Great for electronics projects
+- Many pieces in one kit
+Cons:
+- Not for power or data cabling
+- Thin wires can loosen
+
+HDMI Cable 2 m | 320
+Image: 
+Alt: 2 meter HDMI cable
+Description: Connects a laptop to a TV or monitor.
+Pros:
+- Carries video and audio in one cable
+- Long enough for a desk setup
+Cons:
+- Needs matching ports
+- Does not carry power
+
+65W USB-C Charger | 1290
+Image: 
+Alt: 65W USB-C fast charger
+Description: Charges laptops, phones and tablets.
+Pros:
+- One charger for laptop and phone
+- Fast charging
+Cons:
+- Bulkier than a phone charger
+- Needs a USB-C cable

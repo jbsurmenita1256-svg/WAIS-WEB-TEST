@@ -1,0 +1,6 @@
+{
+  "name": "WAIS Philippines — Product Inventory",
+  "description": "WAIS Philippines tech inventory storefront with live search, category dropdown, product comparison, cart, and an editable .txt product database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

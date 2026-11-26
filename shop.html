@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAIS Computer &amp; Gadgets — Shop</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Shown ONLY if user is NOT logged in -->
+  <div class="auth-wrap" id="shopLocked" hidden>
+    <div class="auth-card">
+      <h1>Shop Access Locked</h1>
+      <p>Please log in or register first before entering the WAIS Computer &amp; Gadgets shop.</p>
+      <div class="hero-actions">
+        <a class="btn green" href="login.html">Login</a>
+        <a class="btn" href="login.html?tab=register">Register</a>
+        <a class="btn" href="index.html">Back to Main Page</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shown ONLY after login -->
+  <div class="app" id="shopApp" hidden>
+    <nav class="sidebar" aria-label="Main">
+      <a class="home" href="index.html">MAIN PAGE</a>
+      <ul>
+        <li class="group">
+          <a href="#inventory" data-view="inventory" data-cat="all">Shop Inventory</a>
+          <ul class="sub">
+            <li><a href="#laptop" data-view="inventory" data-cat="Laptop">Laptop</a></li>
+            <li><a href="#components" data-view="inventory" data-cat="Components">Components</a></li>
+            <li><a href="#accessories" data-view="inventory" data-cat="Accessories">Accessories</a></li>
+            <li><a href="#consoles" data-view="inventory" data-cat="Gaming Consoles">Gaming Consoles</a></li>
+          </ul>
+        </li>
+        <li><a href="#help" data-view="help">Help &amp; Settings</a></li>
+        <li><a href="#language" data-view="language">Language</a></li>
+        <li><a href="#orders" data-view="orders">Customer Order</a></li>
+        <li><a href="login.html" id="navAccount">Account</a></li>
+        <li id="adminNavItem" hidden><a href="admin.html" class="admin-link">Admin Editor</a></li>
+        <li><a href="#signout" id="shopSignOut">Sign Out</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <header class="topbar">
+        <div class="logo">
+          <i></i>
+          <span>Wais<br />Philippines</span>
+        </div>
+
+        <input
+          id="searchInput"
+          class="search"
+          type="search"
+          placeholder="Search products..."
+          aria-label="Search products"
+        />
+
+        <select id="categorySelect" class="dropdown" aria-label="Category filter">
+          <option value="all">All Categories</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Components">Components</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Gaming Consoles">Gaming Consoles</option>
+        </select>
+
+        <button class="btn" type="button" data-view="favorites" id="favBtn">&#9733; Favorites</button>
+        <button class="btn" type="button" data-view="subscription" id="subBtn">Subscription</button>
+        <button class="btn" type="button" data-view="cart" id="cartBtn">&#128722; Cart</button>
+      </header>
+
+      <section class="deals" aria-label="Discounted products">
+        <div class="track" id="dealsTrack"></div>
+      </section>
+
+      <div class="content">
+        <!-- Product Inventory -->
+        <section class="view active" id="view-inventory">
+          <h2 id="inventoryTitle">Product Inventory</h2>
+          <p class="tip">Tap the &#9995; on any two products to compare their pros and cons.</p>
+          <div class="grid" id="productGrid"></div>
+          <p class="empty" id="noResults" hidden>No products match your search or category.</p>
+        </section>
+
+        <!-- Help & Settings -->
+        <section class="view" id="view-help">
+          <h2>Help &amp; Settings</h2>
+          <details>
+            <summary>How do I add an item to my cart?</summary>
+            <p>Press "Add to cart" on a product, then open Cart at the top.</p>
+          </details>
+          <details>
+            <summary>How do I remove an item?</summary>
+            <p>Press the same button again, or click Remove in the Cart view.</p>
+          </details>
+          <details>
+            <summary>How do I compare two products?</summary>
+            <p>Click the &#9995; icon on any two product cards to view their pros and cons.</p>
+          </details>
+        </section>
+
+        <!-- Language -->
+        <section class="view" id="view-language">
+          <h2>Language</h2>
+          <div class="langs">
+            <label><input type="radio" name="lang" value="en" checked /> English</label>
+            <label><input type="radio" name="lang" value="fil" /> Filipino</label>
+            <label><input type="radio" name="lang" value="ceb" /> Cebuano</label>
+          </div>
+        </section>
+
+        <!-- Customer Orders -->
+        <section class="view" id="view-orders">
+          <h2>Customer Order</h2>
+          <table>
+            <thead>
+              <tr><th>Order</th><th>Item</th><th>Status</th></tr>
+            </thead>
+            <tbody id="ordersBody">
+              <tr><td>#1001</td><td>Wireless Mouse</td><td>Delivered</td></tr>
+              <tr><td>#1002</td><td>1 TB NVMe SSD</td><td>Shipped</td></tr>
+              <tr><td>#1003</td><td>Pink Slim 14</td><td>Processing</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Favorites -->
+        <section class="view" id="view-favorites">
+          <h2>Favorites</h2>
+          <ul class="list" id="favList"></ul>
+          <p class="empty" id="favEmpty">No favorites yet. Press "Favorite" on a product.</p>
+        </section>
+
+        <!-- Cart -->
+        <section class="view" id="view-cart">
+          <h2>Cart</h2>
+          <ul class="list" id="cartList"></ul>
+          <p class="empty" id="cartEmpty">Your cart is empty. Press "Add to cart" on a product.</p>
+          <div id="cartSummary" hidden>
+            <p class="total-line">Total: <strong id="cartTotal">&#8369;0</strong></p>
+            <button class="btn green" type="button" id="checkoutBtn">Place Order</button>
+          </div>
+        </section>
+
+        <!-- Subscription -->
+        <section class="view" id="view-subscription">
+          <h2>Subscription</h2>
+          <div class="plans">
+            <label class="plan">
+              <input type="radio" name="plan" value="0" checked />
+              <span><b>Basic</b><br />&#8369;199 / month<br />Free shipping</span>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="0.05" />
+              <span><b>Plus</b><br />&#8369;399 / month<br />5% off all items</span>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="0.10" />
+              <span><b>Pro</b><br />&#8369;699 / month<br />10% off + early access</span>
+            </label>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Compare Modal -->
+  <section class="compare" id="compareModal" aria-label="Product comparison" hidden>
+    <div class="backdrop" id="compareBackdrop"></div>
+    <div class="cmp-window" role="dialog" aria-label="Compare products">
+      <div class="cmp-head">
+        <h2>Compare products</h2>
+        <button class="btn" type="button" id="compareCloseBtn">Close</button>
+      </div>
+      <div class="cmp-grid" id="compareGrid"></div>
+    </div>
+  </section>
+
+  <!-- Floating Compare Tray -->
+  <div class="tray" id="compareTray" hidden>
+    <span id="compareMsg"></span>
+    <button class="btn" type="button" id="compareClearBtn">Clear picks</button>
+  </div>
+
+  <script src="shop.js"></script>
+</body>
+</html>
